@@ -1,0 +1,105 @@
+─────────────────────────────────────────────
+1. CONCEPT SUMMARY
+─────────────────────────────────────────────
+Passive reconnaissance gathers intelligence from publicly available sources without sending any packets to the target. It is the stealthiest and lowest-risk phase of an engagement. Core techniques include WHOIS/RDAP lookups, DNS record queries, subdomain discovery via DNSDumpster and Certificate Transparency logs, and Shodan searches for exposed services. Even though passive recon is undetectable by the target, it still requires valid engagement authorisation.
+
+─────────────────────────────────────────────
+2. BASIC RECALL
+─────────────────────────────────────────────
+- What is the difference between passive and active reconnaissance?
+- What protocol does WHOIS use and on what port?
+- What is replacing WHOIS and why?
+- Name the six DNS record types covered in this room and what each returns.
+- Which DNS tool is preferred — dig or nslookup? Why?
+- What does DNSDumpster do that dig cannot?
+- What are Certificate Transparency logs and how do you search them?
+- What does Shodan index?
+- What does `clientTransferProhibited` mean in a WHOIS response?
+
+─────────────────────────────────────────────
+3. UNDERSTANDING
+─────────────────────────────────────────────
+- Why is querying a public DNS resolver considered passive even though you are making a network request?
+- Why would an attacker look at MX records during passive recon?
+- Why are TXT records high-value in both offensive and defensive contexts?
+- Explain why crt.sh returns more subdomains than DNSDumpster alone.
+- Why does "passive" recon still require authorisation in a pentest context?
+- What does a `vuln` tag on a Shodan host entry mean, and why is it significant?
+
+─────────────────────────────────────────────
+4. APPLICATION
+─────────────────────────────────────────────
+Scenario 1 (CTF):
+You are given a domain target.thm. Before touching any live systems, write the exact sequence of passive recon commands you would run to gather: IPv4 addresses, mail servers, TXT records, and registrar information.
+
+Scenario 2 (Pentest):
+Your client gives you a scope of example.com and all its subdomains. You need to build a complete subdomain list before active scanning begins. What two passive methods do you use, why, and in what order?
+
+Scenario 3 (SOC/Blue Team):
+Your organisation's security team asks you to assess what a threat actor could discover about your company's infrastructure using only passive methods. What sources would you check, and what would you look for in each?
+
+Scenario 4 (Interview):
+An interviewer asks: "How would you begin gathering information on a target before your first active scan?" Walk through your passive recon process step by step.
+
+Scenario 5 (Real pentest decision):
+You discover via crt.sh that the target has a subdomain `staging.company.com` that is not mentioned in your scope document. What do you do?
+
+─────────────────────────────────────────────
+5. TEACHING PROMPTS
+─────────────────────────────────────────────
+Explain passive reconnaissance to:
+
+A) A complete beginner:
+"Imagine you are about to buy a house. Before visiting, you look it up on Google Maps, check the property history online, and read public records. You haven't knocked on the door yet — you haven't even driven past. Passive recon is exactly that. You are gathering everything publicly available about a target without them ever knowing you looked."
+
+B) A cybersecurity student:
+"Passive recon uses publicly available sources — DNS records, WHOIS databases, certificate logs, and Shodan — to build a picture of the target without touching it. The key constraint is zero direct interaction with the target. Queries go to public resolvers and third-party databases, not the target's own infrastructure."
+
+C) A technical interviewer:
+"My passive recon workflow starts with WHOIS/RDAP for registrar and date information, then dig for A, MX, and TXT records using a public resolver like 1.1.1.1. For subdomain discovery I combine DNSDumpster and crt.sh CT log searches — crt.sh consistently returns significantly more coverage. I then feed discovered IPs into Shodan to identify exposed services and version banners. All of this happens before a single packet touches the target."
+
+D) A junior pentester you're mentoring:
+"Do not skip passive recon to get to scanning faster. The subdomains you find on crt.sh before you touch anything often include development servers, forgotten admin panels, and staging environments that are far easier to exploit than the main target. Map everything passively first."
+
+─────────────────────────────────────────────
+6. INTERVIEW QUESTIONS
+─────────────────────────────────────────────
+Entry level / SOC analyst:
+- What is passive reconnaissance and how does it differ from active?
+- Name three tools used for passive recon and what each discovers.
+- What DNS record type would you query to find a company's mail servers?
+- What is Shodan and why is it useful in passive recon?
+
+Mid-level / technical:
+- Walk through a complete passive recon workflow for a given domain.
+- What is the difference between dig and nslookup and when would you use each?
+- What are Certificate Transparency logs and how do you use crt.sh to enumerate subdomains?
+- Why are TXT records valuable to both attackers and defenders?
+- What is RDAP and why is it replacing WHOIS?
+- A target's MX records point to aspmx.l.google.com. What does this tell you?
+
+Senior / OSCP-style / practical:
+- You find a subdomain via crt.sh that is not in your scope. What is your process?
+- How would you use Shodan data to prioritise targets after passive recon?
+- Explain how a defender should monitor their own passive footprint and what tools they would use.
+- What does `clientTransferProhibited` in WHOIS status tell you about the target's domain hygiene?
+- How does TXT record analysis inform phishing simulation scope decisions?
+
+─────────────────────────────────────────────
+7. COMMON MISTAKES
+─────────────────────────────────────────────
+- Relying on dig/nslookup alone for subdomain discovery — these only resolve names you already know; CT logs reveal far more
+- Treating passive recon as legally risk-free — it still requires authorisation; "passive" describes the technique, not the legal status
+- Ignoring TXT records — SPF misconfigurations, DMARC gaps, and CTF flags are commonly found here
+- Using nslookup as the primary tool in professional work — dig is the standard; nslookup is legacy
+- Searching Shodan by domain name only — feeding specific IPs from your dig output produces richer, more targeted results
+- Skipping RDAP/WHOIS because "personal details are redacted" — dates and name servers remain valuable even without contact info
+- Forgetting that crt.sh uses `%` as a wildcard, not `*` — `%.target.com` is the correct search pattern
+
+─────────────────────────────────────────────
+8. CONFIDENCE RATING
+─────────────────────────────────────────────
+[ ] Beginner — needed notes for most answers
+[ ] Familiar — answered recall and understanding, struggled with application
+[ ] Comfortable — answered all sections with minor gaps
+[ ] Interview Ready — could answer all tiers on the spot
