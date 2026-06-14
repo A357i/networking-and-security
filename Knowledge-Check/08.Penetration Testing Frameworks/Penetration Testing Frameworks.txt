@@ -1,0 +1,111 @@
+─────────────────────────────────────────────
+1. CONCEPT SUMMARY
+─────────────────────────────────────────────
+Penetration testing frameworks are structured methodologies that guide a tester through an engagement from scoping to reporting. They ensure thoroughness, consistency, compliance, and clear communication. No single framework fits all engagements — selection is driven by scope, regulation, and client environment. MITRE ATT&CK is not a framework but a knowledge base used to annotate findings with standardized adversary technique vocabulary.
+
+─────────────────────────────────────────────
+2. BASIC RECALL
+─────────────────────────────────────────────
+- What does PTES stand for?
+- What does OSSTMM stand for, and who developed it?
+- What metric does OSSTMM use to quantify exposure vs. controls?
+- How many phases does PTES have? Name them in order.
+- How many steps does the ISSAF assessment phase have?
+- What does ATT&CK stand for?
+- What do columns represent in the ATT&CK matrix? What do rows represent?
+- What OWASP guide covers mobile application testing?
+- Which framework is mandatory for clients handling payment card data?
+
+─────────────────────────────────────────────
+3. UNDERSTANDING
+─────────────────────────────────────────────
+- Explain why MITRE ATT&CK complements a framework like PTES rather than replacing it.
+- Why is OSSTMM harder to implement than PTES for a small team?
+- What is the difference between OWASP WSTG and the OWASP Top Ten?
+- Why does NIST SP 800-115 treat penetration testing as one technique among several, rather than the focus?
+- Why is ISSAF worth studying even though it is no longer maintained?
+- What is "checklist mentality" and why is it a risk in WSTG-style testing?
+- Explain the difference between a Tactic and a Technique in ATT&CK.
+
+─────────────────────────────────────────────
+4. APPLICATION
+─────────────────────────────────────────────
+Scenario 1 (CTF):
+You finish a CTF box. You gained initial access via a phishing simulation, escalated privileges by exploiting a misconfigured service, and exfiltrated a flag from a database. Your write-up needs to include ATT&CK technique IDs. Which tactic covers initial access via phishing? What is the technique ID for spearphishing attachment? What tactic covers privilege escalation?
+
+Scenario 2 (Pentest):
+A U.S. federal agency contracts your team to assess its internal network. The client explicitly states that results must align with federal guidelines and include both document review and active testing. Which framework is the most natural primary choice and why?
+
+Scenario 3 (Pentest — Framework Selection):
+A fintech startup asks you to test their Android and iOS banking apps. Both apps process credit card transactions. What frameworks must you use, and why? Is either one optional?
+
+Scenario 4 (SOC/Blue Team):
+A client receives your PTES-based pentest report. Their SOC lead asks: "How does this compare to what real APT groups are doing?" How do you use ATT&CK to answer that question, and what does adding ATT&CK IDs to the report enable the SOC to do?
+
+Scenario 5 (Junior tester mistake):
+A junior tester says: "I finished the WSTG checklist and tested all 90+ test cases." Why might this be insufficient, and what should a strong tester do beyond the checklist?
+
+Scenario 6 (Interview):
+An interviewer asks: "You've just been hired for a standard corporate network pentest. Walk me through which framework you'd use and why." What is your answer?
+
+─────────────────────────────────────────────
+5. TEACHING PROMPTS
+─────────────────────────────────────────────
+Explain penetration testing frameworks to:
+
+A) A complete beginner (no jargon):
+"Imagine you're a home inspector. You could just wander around and check whatever catches your eye — but you might miss the roof, or check the kitchen twice. A framework is a checklist that ensures you inspect every room in the right order, so nothing gets missed and your report means something."
+
+B) A cybersecurity student:
+"A pentest framework is a structured methodology that defines how to scope, conduct, and report a penetration test. Different frameworks suit different contexts — PTES for standard network tests, OWASP WSTG for web apps, NIST SP 800-115 for government work. MITRE ATT&CK isn't a framework — it's a vocabulary for describing what you found in terms of real adversary behavior."
+
+C) A technical interviewer:
+"I select frameworks based on scope, regulatory requirements, and deliverable expectations. For a standard corporate network test, PTES gives me the end-to-end workflow. I supplement it with OWASP WSTG for any web components and annotate findings with MITRE ATT&CK technique IDs to give the client's blue team actionable detection guidance. If the client is in a regulated sector — PCI DSS, UK finance — the regulatory framework takes precedence and shapes the scope and reporting format."
+
+D) A junior pentester you're mentoring:
+"You don't pick a framework arbitrarily. Ask four questions: What am I testing? What does the client's regulation require? Do they need repeatable metrics? What can my team actually implement? The answers tell you which framework to use. PTES is a solid default to learn first — it mirrors how real engagements actually run."
+
+─────────────────────────────────────────────
+6. INTERVIEW QUESTIONS
+─────────────────────────────────────────────
+Entry level / SOC analyst:
+- What is the purpose of a penetration testing framework?
+- Name three penetration testing frameworks and describe what each is best used for.
+- What is MITRE ATT&CK and how is it different from a pentest framework?
+- A client processes credit card payments. Which framework requirement applies to their pentest?
+
+Mid-level / technical:
+- Compare OSSTMM and PTES. What does each prioritize, and when would you choose one over the other?
+- What are OSSTMM's five security channels and why do they matter?
+- Walk through the PTES phases in order and explain what happens in each.
+- What is a Risk Assessment Value (RAV) in OSSTMM?
+- How would you use MITRE ATT&CK to enrich a pentest report?
+- What is the WSTG test case identifier format? Give an example.
+
+Senior / OSCP-style / practical:
+- A client is a UK bank with Bank of England oversight. What framework applies and why can no general-purpose framework satisfy this alone?
+- How would you structure a multi-framework engagement for a fintech company with mobile apps and cardholder data?
+- An engagement has findings including a phishing simulation, credential dumping, and lateral movement via stolen tokens. Map each to an ATT&CK tactic and technique ID.
+- Explain why NIST SP 800-115 is "guidance, not regulation" and what practical implications that has for a government contractor client.
+- Why should ISSAF's nine-step model be understood even though the framework is unmaintained?
+
+─────────────────────────────────────────────
+7. COMMON MISTAKES
+─────────────────────────────────────────────
+- Treating MITRE ATT&CK as a pentest framework — it is a knowledge base, not a methodology
+- Selecting a framework by personal preference instead of client context and regulatory requirements
+- Assuming PTES is always the right answer — it is a strong default, but regulation can override preference entirely
+- Using ISSAF's tool-specific guidance — it references decade-old software versions. Study the nine-step logic, not the tools.
+- Checklist mentality with WSTG — executing all 90+ test cases without assessing overall risk posture produces technically compliant but practically weak results
+- Skipping the PTES pre-engagement phase — unclear scope and missing authorization letters are the most common source of legal disputes in penetration testing
+- Confusing tactics and techniques in ATT&CK — tactics are the *why* (high-level objective), techniques are the *how* (specific method)
+
+─────────────────────────────────────────────
+8. CONFIDENCE RATING
+─────────────────────────────────────────────
+After answering all sections above, rate yourself:
+
+[ ] Beginner — needed notes for most answers
+[ ] Familiar — answered recall and understanding, struggled with application
+[ ] Comfortable — answered all sections with minor gaps
+[ ] Interview Ready — could answer all tiers on the spot
