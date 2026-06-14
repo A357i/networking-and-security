@@ -1,0 +1,17 @@
+WHOIS is a query/response protocol (RFC 3912) that runs on TCP port 43. It returns domain registration records maintained by the domain registrar.
+What a WHOIS response may contain:
+
+Registrar — the company that registered the domain (e.g., Namecheap, GoDaddy)
+Registrant contact — name, organisation, address, phone, email (now usually redacted — "Withheld for Privacy" since GDPR 2018)
+Dates — creation, last updated, expiration
+Name servers — the authoritative DNS servers for the domain
+Status codes — e.g., clientTransferProhibited = domain locked against unauthorized transfer
+Abuse contacts — registrar email/phone for reporting issues
+
+What attackers actually focus on (since personal details are usually redacted):
+
+Dates — estimate company age, identify renewal windows for phishing timing
+Name servers — potential new targets if in scope
+Historical WHOIS data (via whoxy.com) — previous owners, registrar changes, name server migrations that may indicate past compromises
+
+WHOIS is being replaced by RDAP (Registration Data Access Protocol). As of January 2025, ICANN officially sunsetted WHOIS for gTLDs. RDAP uses HTTPS, returns structured JSON, supports better privacy controls. Access via curl or dedicated clients like OpenRADP. Many tools redirect to RDAP automatically.

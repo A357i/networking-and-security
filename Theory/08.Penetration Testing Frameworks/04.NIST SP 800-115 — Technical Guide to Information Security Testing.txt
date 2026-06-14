@@ -1,0 +1,14 @@
+Published by the National Institute of Standards and Technology (NIST)
+Broader than a pentest framework — covers the full spectrum of security testing: document review, log analysis, vulnerability scanning, and penetration testing
+Pentest is treated as one technique among several, all serving the goal of validating security controls
+Three core objectives: identify vulnerabilities → validate security controls → assess exploitability
+Three phases:
+
+Planning — define scope, rules of engagement, emergency procedures, formal test plan
+Execution — four technique categories: Review techniques → Target identification and analysis → Target vulnerability validation → Penetration testing (passive to active, low to high impact)
+Post-Testing — analyze results, prioritize risks, deliver actionable remediation
+
+
+Emphasizes actionable findings — telling a client "you have SQL injection" is insufficient; the report must explain which parameter, what data is at risk, and how to fix it
+Best for: U.S. government, federal contractors, regulated environments
+Weakness: guidance, not regulation — does not enforce audit frequencies or penalties

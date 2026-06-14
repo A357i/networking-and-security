@@ -1,0 +1,21 @@
+Developed by OISSG (Open Information Systems Security Group)
+Last version: v0.2.1, published ~2006, no longer actively maintained
+Study it for its methodology and adversarial logic — not its tool guidance
+Value: its nine-step assessment model is one of the clearest representations of how an attacker progresses through an environment
+Three phases: Planning and Preparation → Assessment → Reporting and Cleanup
+Nine assessment steps (memorize the progression):
+
+Information gathering
+Network mapping
+Vulnerability identification
+Penetration
+Gaining access and privilege escalation
+Enumerating further
+Compromise remote users/sites (lateral movement)
+Maintaining access
+Covering tracks
+
+
+Steps 1–3: reconnaissance and analysis | Steps 4–7: active compromise | Steps 8–9: persistence and stealth
+This mirrors the Cyber Kill Chain and APT logic
+For current tool guidance: use PTES, OWASP WSTG, or relevant tool documentation

@@ -1,0 +1,20 @@
+Standard DNS lookups only resolve names you already know. To discover subdomains you don't know exist, two passive methods are most effective:
+DNSDumpster (dnsdumpster.com)
+
+Aggregates public DNS data from search engine caches, zone transfer databases, and certificate records
+Returns: subdomains with resolved IPs, geolocation, MX/TXT/CNAME records, and a visual relationship map
+Fully passive — no queries sent to the target
+Use it to find forgotten subdomains like dev.company.com, admin.company.com, or staging.company.com
+
+Why subdomains matter: they expose forgotten or vulnerable services (outdated CMS, development panels, shadow IT), misconfigured applications, and additional attack surface such as exposed APIs or admin portals.
+Certificate Transparency (CT) Logs — crt.sh
+
+The most effective passive subdomain discovery method available
+CT logs are a public logging framework (mandatory since ~2015) that records every SSL/TLS certificate issued by Certificate Authorities
+Each certificate contains a Subject Alternative Name (SAN) field listing all domains and subdomains it covers
+Access via https://crt.sh — search %.tryhackme.com (the % wildcard matches any subdomain)
+Fully passive, real-time, no rate limits for basic use
+Reveals 10–100× more subdomains than DNSDumpster alone
+
+Other passive subdomain tools: SecurityTrails (free limited searches), Subfinder (command-line, aggregates multiple passive sources)
+Defender note: organisations monitor CT logs to catch dangling DNS records (subdomain takeover risk) and unauthorised certificate issuance.

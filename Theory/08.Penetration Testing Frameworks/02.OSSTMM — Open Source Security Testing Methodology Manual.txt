@@ -1,0 +1,16 @@
+Developed by ISECOM, currently version 3
+Core philosophy: metrics over opinions — results must be quantifiable, verifiable, and repeatable
+Tests across five security channels:
+
+HUMSEC — social engineering and human factors
+PHYSSEC — physical access controls
+SPECSEC — wireless, Bluetooth, RFID
+COMSEC — phone, VoIP, fax, modem
+DATASEC — network services, firewalls, application protocols
+
+
+Key metric: Risk Assessment Value (RAV) — measures balance between attack surface (exposure) and controls protecting it. Positive RAV = residual risk. RAV near zero = controls match exposure.
+Four phases: Induction (enumerate/verify) → Interaction (probe/quantify) → Inquiry (exploit/escalate) → Intervention (quarantine/audit/entice)
+Deliverable format: Security Test Audit Report (STAR)
+Best for: organizations needing auditable, repeatable measurements
+Weakness: steep learning curve, time-consuming, fewer practitioners than OWASP/NIST

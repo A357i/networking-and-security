@@ -1,0 +1,16 @@
+Available at pentest-standard.org
+Developed by experienced practitioners to define what a real pentest looks like end-to-end
+Focuses on how the engagement flows, not what to test or how to measure
+Seven phases:
+
+Pre-Engagement Interactions — scope, rules of engagement, authorization letter, emergency contacts, testing windows
+Intelligence Gathering — passive recon (LinkedIn, certificate transparency, job postings) and active recon (DNS enum, network scanning)
+Threat Modeling — identify highest-value assets, define primary attack paths using adversarial logic
+Vulnerability Analysis — automated scanning + manual verification to eliminate false positives
+Exploitation — purposeful exploitation to demonstrate business impact, not just "pop shells"
+Post-Exploitation — pivot, extract credentials, demonstrate lateral movement; translate technical access into business risk
+Reporting — executive summary (business risk in plain language) + technical report (exact steps, affected hosts, evidence, remediation)
+
+
+Best for: standard corporate network pentests, junior testers building workflow instincts
+Weakness: not formally updated in several years; tool-specific guidance is outdated. Supplement with current documentation.

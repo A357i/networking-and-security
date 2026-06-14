@@ -1,0 +1,7 @@
+Published by the Open Web Application Security Project (OWASP)
+Organizes web application testing into over 90 discrete test cases across 12 categories
+Test cases use a numbered identifier format: WSTG-[CATEGORY]-[NUMBER] (e.g., WSTG-INPV-01 for input validation, WSTG-ATHN for authentication)
+Risk-based approach: prioritizes vulnerabilities by exploitability and impact
+Aligns testing across five SDLC phases: Before development → Definition/Design → Development → Deployment → Maintenance
+Best for: web application penetration testing engagements
+Weakness: 90+ test cases makes full implementation impractical for constrained teams; risk of "checklist mentality" — mechanically ticking boxes without assessing overall risk posture

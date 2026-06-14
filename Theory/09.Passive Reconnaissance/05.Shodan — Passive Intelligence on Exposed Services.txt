@@ -1,0 +1,17 @@
+Shodan is a search engine for internet-connected devices. It continuously scans the public internet, collects banners and responses from open ports, and indexes them. Unlike Google (which indexes web page content), Shodan indexes devices: servers, IoT equipment, cameras, routers, industrial control systems.
+What a Shodan host entry shows:
+
+IP address and ASN (Autonomous System Number — identifies the network block)
+Hosting provider/organisation (e.g., Cloudflare, AWS)
+Geographic location (country, city)
+Open ports and services with version strings and banners
+Tags: cdn, vuln (if a known vulnerability matches the detected service version)
+
+Shodan search filters:
+hostname:tryhackme.com        → match specific hostname
+org:"TryHackMe"               → filter by organisation name
+port:443 country:US           → filter by port and country
+http.component:"wordpress"    → identify technology stack
+
+Defensive value: organisations use Shodan to identify their own unintended exposures — rogue servers, forgotten test machines, vulnerable services indexed before anyone noticed.
+Key passive recon insight: Shodan reveals what your target looks like from the internet before you send a single packet. Feed IPs from dig/nslookup into Shodan to see what services are running and what version banners are exposed.

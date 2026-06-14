@@ -1,0 +1,10 @@
+Reconnaissance is the preliminary phase of any attack or pentest — collecting information about a target before engaging it. It maps to the first stage of the Cyber Kill Chain (Reconnaissance) and the Intelligence Gathering phase of PTES.
+Passive Reconnaissance — gather intelligence using only publicly available sources. No packets are sent to the target. The target cannot detect you.
+
+Examples: querying public DNS records, searching certificate logs, reviewing LinkedIn job postings, reading GitHub repositories, checking Shodan for indexed device banners.
+Active Reconnaissance — direct interaction with the target. Your probes can be logged, detected, or blocked.
+
+Examples: port scanning with Nmap, sending ICMP pings, fuzzing web endpoints, social engineering, physical tailgating.
+Critical rule: any direct interaction with a person affiliated with the target counts as active recon — even with no packets involved. Attending a company event and asking an employee about their tech stack is active recon.
+Why passive recon comes first: it is fully stealthy, carries minimal legal risk when within scope, and often uncovers forgotten subdomains, outdated services, and misconfigurations before you touch anything. Active recon without prior passive recon is noisier and less targeted.
+Defender note: organisations now monitor their own passive footprint using Shodan/Censys alerts, CT log watchers, and automated OSINT tools. As a blue teamer, knowing what passive recon reveals about your own infrastructure is essential.

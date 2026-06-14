@@ -1,0 +1,14 @@
+Developed and maintained by MITRE Corporation
+Not a penetration testing framework — it is a knowledge base of adversary behavior built from real-world observations
+ATT&CK = Adversarial Tactics, Techniques, and Common Knowledge
+Matrix structure:
+
+Columns = Tactics (the why — high-level adversary objectives): Initial Access, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration, Impact (14 tactics in Enterprise matrix)
+Rows = Techniques (the how — specific methods): e.g., Phishing (T1566), Exploit Public-Facing Application (T1190)
+Techniques break into sub-techniques: T1566.001 (spearphishing attachment), T1566.002 (spearphishing link), T1566.003 (spearphishing via service)
+
+
+Each technique entry includes: description, real-world threat group examples, detection recommendations, mitigations
+ATT&CK complements frameworks — it does not replace them. PTES tells you how to run the test. ATT&CK tells you what you found and provides standardized vocabulary to describe it.
+Analogy: PTES = diagnostic procedure. ATT&CK = medical dictionary.
+Practical use: after completing a PTES engagement, map each finding to an ATT&CK technique ID. This elevates the report from a list of bugs to a narrative grounded in real threat behavior, enabling the client's blue team to build detection rules.

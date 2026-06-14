@@ -1,0 +1,15 @@
+DNS translates domain names to IP addresses and stores other infrastructure information. Querying public DNS servers is fully passive — queries go to open resolvers, not the target's servers directly.
+
+Record		| What it returns
+Type		
+A		| IPv4 address(es) for the domain
+AAAA		| IPv6 address(es) for the domain
+CNAME		| Canonical Name — alias pointing one domain to another
+MX		| Mail servers responsible for handling email (includes priority value — lower = higher priority)
+SOA		| Start of Authority — primary name server, admin email, zone serial number
+TXT		| Arbitrary text — commonly used for SPF, DKIM, DMARC, domain verification, and sometimes flags in CTFs
+
+What MX records reveal: the email provider (e.g., Google Workspace MX records on a company domain reveals they use Gmail). This matters for phishing simulation scoping and social engineering.
+What TXT records reveal: SPF/DMARC configuration gaps that enable email spoofing; domain verification tokens; sometimes leaked internal information or CTF flags.
+Defender note: monitor for unexpected DNS changes — new MX records or rogue TXT entries can indicate subdomain takeover or configuration errors.
+

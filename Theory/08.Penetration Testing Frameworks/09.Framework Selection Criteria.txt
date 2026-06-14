@@ -1,0 +1,12 @@
+Four factors drive framework selection in real engagements:
+
+Engagement scope and target type — web app → OWASP WSTG; 
+mobile → OWASP MASTG; full-spectrum network → PTES or OSSTMM; 
+multi-channel including physical/human → OSSTMM
+Regulatory and compliance requirements — PCI DSS client → PCI DSS guidelines mandatory; 
+UK financial institution → CBEST may be mandated; 
+U.S. government → NIST SP 800-115
+Need for quantifiable, repeatable results — cross-team or year-over-year comparison → OSSTMM RAV metrics
+Team expertise and resources — small team, standard corporate network → PTES is the practical default; OSSTMM and CBEST require deep specialist knowledge
+
+Real engagements typically use a primary framework + supplementary frameworks. Example: PTES (primary) + OWASP WSTG (web-specific test cases) + MITRE ATT&CK (finding annotation).

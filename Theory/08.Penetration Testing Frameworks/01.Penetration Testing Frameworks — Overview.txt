@@ -1,0 +1,9 @@
+A penetration testing framework is a structured methodology that guides a tester through every stage of an engagement — from scoping to reporting. Without one, testing becomes disorganized, coverage is incomplete, and results are not repeatable or defensible.
+Four benefits of using a framework:
+
+Thoroughness — critical areas are not overlooked
+Consistency — different testers produce comparable results
+Compliance — aligns with regulatory requirements
+Communication — clients and auditors trust a recognized standard
+
+Framework selection is always context-driven. The right choice depends on: engagement scope and target type, regulatory obligations, need for quantifiable results, and team expertise.
