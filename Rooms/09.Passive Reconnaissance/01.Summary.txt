@@ -1,0 +1,15 @@
+Room: Passive Reconnaissance
+Platform: TryHackMe — Network Security Module
+
+What did I learn?
+- Passive recon = publicly available sources only, no packets to target
+- Active recon = direct target interaction, detectable, requires explicit authorisation
+- whois/RDAP reveals registrar, dates, nameservers (personal data now usually redacted)
+- WHOIS is being replaced by RDAP — use curl + jq for modern structured output
+- dig is the preferred DNS tool; nslookup is legacy but still encountered
+- DNS record types: A, AAAA, MX, CNAME, TXT, SOA — each reveals different infrastructure
+- TXT records are high-value: SPF gaps = email spoofing risk; CTF flags sometimes hidden here
+- DNSDumpster finds subdomains and produces a visual relationship map
+- crt.sh (CT logs) is the most effective passive subdomain discovery method — 10-100x more than DNSDumpster
+- Shodan indexes internet-connected device banners — reveals open ports, service versions, and org info without touching the target
+- Passive recon triggers no alerts and carries minimal legal risk but still requires engagement authorisation

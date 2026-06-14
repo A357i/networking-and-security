@@ -1,0 +1,6 @@
+- When you see a scope involving web applications, your first thought should be OWASP WSTG
+- When a client is in payments/finance, compliance requirements override framework preference
+- MITRE ATT&CK technique IDs in a report give the blue team actionable detection guidance — always consider annotating findings
+- ISSAF's nine steps (recon → network map → vuln ID → penetration → privesc → enumerate → lateral move → persist → cover tracks) mirror exactly how real attacks progress
+- "Checklist mentality" is a real failure mode in WSTG-style testing — always assess overall risk posture, not just tick boxes
+- PTES pre-engagement phase detail is the part most junior testers skip and get wrong — scope creep and legal disputes start here

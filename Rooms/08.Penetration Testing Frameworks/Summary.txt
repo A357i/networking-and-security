@@ -1,0 +1,11 @@
+What did I learn?
+- Penetration testing frameworks solve the problem of disorganized, non-repeatable testing
+- Five major frameworks covered: OSSTMM, OWASP WSTG, NIST SP 800-115, PTES, ISSAF
+- MITRE ATT&CK is a complementary knowledge base, not a framework
+- Framework selection is always context-driven — no single framework fits all engagements
+- Real engagements use a primary framework + supplementary frameworks
+- ISSAF is outdated but its nine-step adversarial progression model remains valuable for understanding attacker logic
+- PTES is the most practical framework for standard corporate pentests
+- OSSTMM is uniquely quantitative but requires specialist knowledge
+- Next rooms in module: Threat Modeling for Pentesters, Planning and Scoping
+- These will formalize adversarial mindset alongside the methodological discipline built here

@@ -1,0 +1,7 @@
+- Always run crt.sh before assuming you have a complete subdomain list from DNS alone
+- TXT records are worth checking on every target — SPF/DMARC gaps are common findings
+- MX records reveal the email provider — relevant for phishing simulation scoping
+- Shodan is most useful after you have IPs from dig/nslookup — feed IPs directly into Shodan
+- whois dates are useful even when contact info is redacted — domain age and expiry timing matter
+- RDAP is the modern standard; learn the curl + jq pattern now as whois clients will phase out
+- Passive recon still requires engagement authorisation — "passive" refers to the technique, not the legal status

@@ -1,0 +1,7 @@
+Passive recon workflow executed in this room:
+1. whois tryhackme.com — confirmed registrar (Namecheap), creation date (2018), expiry (2027/2034 RDAP), name servers
+2. dig thmlabs.com TXT — retrieved CTF flag from TXT record (THM{...})
+3. nslookup -type=MX tryhackme.com — confirmed Google Workspace handles email (aspmx.l.google.com, priority 1)
+4. DNSDumpster — searched tryhackme.com, identified subdomains, found Cloudflare as dominant Services/Banners provider
+5. crt.sh — searched %.tryhackme.com for Certificate Transparency subdomain enumeration
+6. Shodan.io — searched tryhackme.com IPs; confirmed US as top country for Apache servers; port 8080 as 3rd common Apache port; port 80 as most common nginx port
