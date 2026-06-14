@@ -1,0 +1,24 @@
+PURPOSE: Query domain registration records (WHOIS/RDAP)
+PROTOCOL: TCP port 43
+
+SYNTAX:
+  whois DOMAIN_NAME
+
+EXAMPLE:
+  whois me.com
+
+WHAT TO LOOK FOR:
+  - Registrar (who registered it)
+  - Dates (creation/expiry — useful for timing social engineering)
+  - Name servers (potential targets if in scope)
+  - Status codes (clientTransferProhibited = domain locked)
+  - Registrant info (usually redacted since GDPR 2018)
+
+ONLINE ALTERNATIVES:
+  https://whois.icann.org/     ← legacy WHOIS
+  https://lookup.icann.org/    ← modern RDAP-focused
+  https://www.whoxy.com/       ← historical WHOIS snapshots
+
+RDAP (modern replacement):
+  curl -s https://rdap.verisign.com/com/v1/domain/DOMAIN | jq .
+  (jq formats JSON output; install: sudo apt install jq)

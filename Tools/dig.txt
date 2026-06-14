@@ -1,0 +1,27 @@
+PURPOSE: DNS record lookup — modern preferred tool
+FULL NAME: Domain Information Groper
+
+SYNTAX:
+  dig [@SERVER] DOMAIN_NAME [TYPE]
+
+EXAMPLES:
+  dig a357i.com A                    ← A records (default resolver)
+  dig @1.1.1.1 a357i.com MX         ← MX records via Cloudflare
+  dig a357i.com TXT                 ← TXT records
+  dig a357i.com AAAA                ← IPv6 records
+
+ADVANTAGES OVER nslookup:
+  - Cleaner output
+  - Shows TTL values by default (how long records are cached)
+  - More reliable for complex queries and scripting
+  - Default tool for Linux/Mac environments
+
+OUTPUT SECTIONS TO READ:
+  ;; ANSWER SECTION    ← the actual answer
+  ;; AUTHORITY         ← authoritative nameservers
+  ;; Query time        ← how long the lookup took
+  ;; SERVER            ← which resolver answered
+
+PRIVACY TIP:
+  Use 1.1.1.1 (Cloudflare) — supports DNS over HTTPS and DNS over TLS
+  to avoid your ISP logging your DNS queries

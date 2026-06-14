@@ -1,0 +1,20 @@
+PURPOSE: DNS record lookup (legacy tool, still common on Windows)
+USE: For compatibility; prefer dig for new work
+
+SYNTAX:
+  nslookup DOMAIN_NAME
+  nslookup -type=TYPE DOMAIN_NAME [SERVER]
+
+EXAMPLES:
+  nslookup -type=A a357i.com 1.1.1.1      ← A record via Cloudflare
+  nslookup -type=MX a357i.com              ← mail servers
+  nslookup -type=TXT a357i.com             ← TXT records (SPF, flags)
+  nslookup -type=MX a357i.com 1.1.1.1     ← specify resolver
+
+DNS RECORD TYPES:
+  A     → IPv4 address
+  AAAA  → IPv6 address
+  CNAME → alias pointing to another domain
+  MX    → mail servers (lower number = higher priority)
+  SOA   → primary nameserver, admin email, zone serial
+  TXT   → SPF, DKIM, DMARC, verification strings, CTF flags
