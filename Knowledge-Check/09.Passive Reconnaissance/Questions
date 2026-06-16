@@ -1,0 +1,11 @@
+Questions 
+
+  1. What is the difference between passive and active reconnaissance?
+  2. What protocol does WHOIS use and on what port?
+  3. What is replacing WHOIS and why?
+  4.  Name the six DNS record types covered in this room and what each returns.
+  5. Which DNS tool is preferred — dig or nslookup? Why?
+  6. What does DNSDumpster do that dig cannot?
+  7. What are Certificate Transparency logs and how do you search them?
+  8. What does Shodan index?
+  9. What does `clientTransferProhibited` mean in a WHOIS response?
