@@ -26,7 +26,6 @@ Protecting systems, networks, and data from unauthorized access, disruption, or 
 | Engineering | Security Engineer, AppSec Engineer, Cloud Security Engineer |
 | Forensics | DFIR Analyst, Malware Analyst |
 
-Your stated path (CTFs → eJPT → OSCP) sits squarely in the **Offensive** track.
 
 ---
 
