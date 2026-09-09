@@ -31,15 +31,27 @@ nmap --scanflags RST 10.113.148.69  # Custom Scan - Experiment with your own fla
 nmap -S SPOOFED_IP 10.113.148.69
 nmap -D 10.10.0.1,10.10.0.2,ME 10.113.148.69    # Decoy Scan - will make the scan appear as comming from different ip address. 3rd order
 nmap -D 10.10.0.1,10.10.0.2,RND,RND,ME 10.113.148.69    # random 3rd 4th 5th one is attacker's ip address.
-sudo nmap -sS -p80 -f 10.113.148.69   # Stealth TCP SYn scan on port 80.
+sudo nmap -sS -p80 -f 10.113.148.69   # SYN on 80, fragmented (-f = 8-byte fragments). The new part is -f, not -sS.
 nmap -sI ZOMBIE_IP 10.113.148.69      # placeholder, failed to resolve
 nmap -sI 10.10.5.5 10.113.148.69      # real IP, zombie unreachable/no probes returned
 nmap -sS 10.113.148.69
 nmap -sS --reason 10.113.148.69       # Nmap provides reasoning
 nmap -sS -vv 10.113.148.69
 ```
+## Keep
+| Flag | Use |
+|---|---|
+| `-sN -sF -sX` | RFC 793 odd-flag scans; result is often open\|filtered |
+| `-sA` | firewall map, not port map |
+| `-D ...,ME` | decoys; ME is your real IP in that list |
+| `-f` | fragment |
+| `--reason` | why Nmap chose that state |
 
-## What I got wrong / what clicked
+## Open
+- [ ] when would I pick ACK over SYN in a real engagement
+- [SYN first, to find listeners. ACK only after that, when I need to see how the firewall treats traffic that is not a connection attempt.]
+
+## Room questions i had ?
 1. What is a stateless firewall ? 
 Stateless firewall: A firewall that judges each packet completely on its own, with no memory of what came before it. In simpler words, a filter, If a packet is destined for port 80 and matches the firewall's rules, it is allowed through. The firewall does not remember whether that packet belongs to an already established TCP connection—it only evaluates the packet itself. This is Stateless.
 2. What are TCP flags ?
