@@ -16,7 +16,7 @@ Advanced Nmap covers the Advanced Port Scan (Null FIN Xmas scans , Evasion and S
 - **Fragmentation (`-f` / `-ff`)** — splits the packet's data into 8- or 16-byte IP fragments to slip past firewalls/IDS that don't reassemble before inspecting.
 - **Idle/zombie scan (`-sI`)** — uses a third idle host's predictable IP ID increments as a side channel, so the scan appears to come from the zombie, not you. Requires a genuinely idle, reachable host — a busy or offline "zombie" just gives useless results.
 
->> Add your own note here on what specifically clicked or connected for you.
+>
 
 ## Commands I actually ran
 ```bash
